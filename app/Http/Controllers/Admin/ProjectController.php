@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Functions\Helper;
 
 class ProjectController extends Controller
 {
@@ -22,7 +23,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -30,7 +31,17 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $exists = Project::where('title', $request->title)->first();
+        if ($exists) {
+            return redirect()->route('admin.projects.index')->with('error', 'Progetto già esistente');
+        } else {
+            $new_project = new Project();
+            $new_project->title = $request->title;
+            $new_project->slug = Helper::generateSlug($new_project->name, Project::class);
+            $new_project->save();
+
+            return redirect()->route('admin.projects.index')->with('success', 'Progetto aggiunto');
+        }
     }
 
     /**

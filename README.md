@@ -14,3 +14,8 @@
 
 **BONUS**
 Creazione del modello `Project` con relativa migrazione, seeder, controller e rotte e stampare la index  dei progetti (protetta da middleware)
+
+
+*Add*
+- Aggiungere, fra le rotte admin, anche la gestione (CRUD) della tabella “projects”
+- Aggiungere due tabelle `technologies` e `types` con le relative *CRUD* (meglio se su una pagina sola)

@@ -8,7 +8,10 @@
                 <a class="nav-link active" aria-current="page" href="{{ route('admin.home')}}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" target="_blank" href="{{ route('home')}}">Vai al sito</a>
+                <a class="nav-link" target="_blank" href="{{ route('admin.home')}}">Vai al sito</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" target="_blank" href="{{ route('admin.projects.index')}}">Vai ai progetti </a>
               </li>
             </ul>
           </div>

@@ -26,6 +26,8 @@ Route::middleware(['auth', 'verified'])
                     // tutte le rotte protette da auth
                     Route::get('/',[DashboardController::class, 'index'])->name('home');
                     Route::resource('projects', ProjectController::class);
+                    Route::resource('technologies', ProjectController::class);
+                    Route::resource('types', ProjectController::class);
                 });
 
 Route::middleware('auth')->group(function () {
